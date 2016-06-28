@@ -16,14 +16,14 @@ print ("----------------------------------------------------")
 
 for room in room_dict['items']:
     print (room['title'])
-    if (room['title']==roomname):roomid = room['id']
-print ("")
+#    if (room['title']==roomname):roomid = room['id']
+    print ("")
 
-mess_dict = pyCiscoSpark.get_messages(accesstoken,roomid)
+    mess_dict = pyCiscoSpark.get_messages(accesstoken,room['id'])
 
-print ("Latest messages in "+roomname)
-print ("----------------------------------------------------")
-for room in mess_dict['items']:
-    if 'text' in room:
-        print (room['text'])
+    print ("Latest messages in "+roomname)
+    print ("----------------------------------------------------")
+    for room in mess_dict['items']:
+        if 'text' in room:
+            print (room['text'])
    
